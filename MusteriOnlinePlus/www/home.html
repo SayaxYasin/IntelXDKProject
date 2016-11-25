@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="author" content="SindevoThemes" />
+    <meta name="description" content="A next generation web app theme" />
+    <meta name="keywords" content="" />
+
+    <link rel="shortcut icon" href="../../favicon.ico" />
+    <title>Anasayfa</title>
+
+    <link href="assets/css/idangerous.swiper.css" rel="stylesheet" />
+    <link href="assets/css/plyr.css" rel="stylesheet" />
+    <link href="assets/css/swipebox.css" rel="stylesheet" />
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="assets/css/wedding.css" rel="stylesheet" />
+    <link href='http://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css' />
+
+    <script src="assets/js/jquery-1.10.1.min.js"></script>
+    <script src="assets/js/jquery.validate.min.js"></script>
+    
+    <script src="cordova.js" id="xdkJScordova_"></script>
+        
+        <script src="js/app.js"></script>
+        <script src="js/init-app.js"></script>
+        <script src="xdk/init-dev.js"></script>
+
+        <script src="js/PushNotification.js"></script>
+        <script src="js/clipboard.js"></script>
+        <!--<script type="text/javascript">
+            function onLoadEvent()
+            {
+                document.addEventListener("deviceready", onDeviceReady, false);
+            }
+            
+            var capturarEventos = function (e) {
+                
+                switch( e.event )
+                {
+                    case 'registered':
+                       if (e.regid.length > 0)
+                       {
+                           jQuery("#hiddenRegistirionId").val(e.regid);
+                           
+                           window.plugins.clipboard.copy(e.regid,                            
+                            function(r){console.log("Copy Succesfully");},
+                            function(e){/*alert(e)*/});
+                       }
+                       
+                        break;
+                    
+                    case 'message':
+                     
+                        if (e.foreground)
+                        {
+                            alert(e.payload.message);
+                        }
+                        else
+                        {	
+                            if (e.coldstart)
+                                alert(e.payload.message);
+                            else
+                                alert("E.Background");
+                        }
+
+                        //alert("e.Peyload.Message");
+
+                        break;
+                    
+                    case 'error':
+						alert("Error E.Message");  
+                        break;
+                    
+                    default:
+						alert("Default Case");  
+                        break;
+                }
+            }
+            
+            function onDeviceReady()  {
+                
+                var androidConfig = {
+                
+                    "senderID" : '184347188461',
+                    "ecb" : "capturarEventos"
+                };
+                
+               if(device.platform == "Android" || device.platform =="android" ) { 
+                window.plugins.pushNotification.register(
+                successHandler,errorHandler,androidConfig);
+                  }
+                else {
+                    alert("Android Değil");
+                }
+                }
+            function successHandler(result) {
+                    //alert("Token Ok = " + result);
+                    }
+            
+            function errorHandler (error) {
+                    //alert("TOKEN Error= " + result);
+                    } 
+           
+        </script>-->
+    <script src="js/home.js"></script>
+</head>
+<body onload="onLoadEvent();">
+    
+    <input type="hidden" id="hiddenMusteriId"/>
+    <input type="hidden" id="hiddenRegistirionId"/>
+    
+    <div class="swiper-container swiper-parent">
+
+        <div class="swiper-wrapper">
+            <!--Menu page-->
+            <div class="swiper-slide sliderbg_menu">
+                <div class="swiper-container swiper-nested">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="slide-inner">
+                                <div class="logo">
+                                    <a href="#">
+                                        <img src="assets/img/sayax.jpg"
+                                             border="0" style="background-color: #fff; border-radius: 100%; border: 8px solid #ff9c01;padding:13px" />
+                                        <span style="color:#fff">TECHNIX TECHNOLOGY</span>
+                                    </a>
+                                </div>
+                                <div class="menu">
+                                    <ul>
+                                      <a href="customer.html" style="box-shadow: -30px 0px 10px 10px #888888;">
+                                        <li>
+                                            <img src="assets/img/customer.png"/>
+                                            <span>Müşteri Bilgileri</span>
+                                        </li>
+                                      </a>
+                                      <a href="invoices.html">
+                                        <li>
+                                            <img src="assets/img/fatura.png"/>
+                                            <span>Faturalar</span>
+                                        </li>
+                                      </a>
+                                      <a href="counters.html">
+                                        <li>
+                                            <img src="assets/img/sayac.png"/>
+                                            <span>Sayaçlar</span>
+                                        </li>
+                                      </a>
+                                      <a href="analysis.html">
+                                        <li>
+                                            <img src="assets/img/analiz.png"/>
+                                            <span>Analiz</span>
+                                        </li>
+                                      </a>
+                                      <a href="about.html">
+                                        <li>
+                                            <img src="assets/img/about.png"/>
+                                            <span>Hakkımızda</span>
+                                        </li>
+                                      </a>
+                                      <a href="contact.html">
+                                        <li>
+                                            <img src="assets/img/geri-bild.png"/>
+                                            <span>Geri Bildirim</span>
+                                        </li>
+                                       </a>
+                                    </ul>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-scrollbar"></div>
+                </div>
+            </div>
+        </div>
+        <div class="pagination"></div>
+    </div>
+
+    <script src="assets/js/plyr.js"></script>
+    <script src="assets/js/load.js"></script>
+    <script src="assets/js/jquery.tabify.js"></script>
+    <script src="assets/js/jquery.swipebox.js"></script>
+    <script src="assets/js/idangerous.swiper-2.1.min.js"></script>
+    <script src="assets/js/idangerous.swiper.scrollbar-2.1.js"></script>
+    <script src="assets/js/code.js"></script>
+    
+</body>
+</html>

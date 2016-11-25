@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ayen Elektrik</title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    
+   
+    
+    <!--<script src="js/jquery-3.1.0.js"></script>
+    <script src="js/jquery.mobile-1.4.5.js"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+     
+    <link rel="stylesheet" type="text/css" href="js/loading.css" />-->
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+   
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> 
+    
+     <script src="js/init-app.js"></script> 
+    <script src="xdk/init-dev.js"></script>
+    <script src="cordova.js" id="xdkJScordova_"></script>
+    
+    <script>
+        
+        document.addEventListener("deviceready", onDeviceReady, false);
+        
+        function onDeviceReady(){
+
+            document.addEventListener("backbutton", function(e){
+               
+                navigator.app.exitApp();
+                 
+                }, false);
+        }
+        //document.addEventListener("backbutton", onBackKeyDown, false);
+        
+        function checkConnection(){
+            
+            if(navigator.network.connection.type == Connection.NONE){
+                document.getElementById("noconn").style.display = "block";
+                document.getElementById("loading").style.display = "none";
+                document.getElementById("close").style.display = "block";
+                document.getElementById("signIn").style.display = "none";
+            } else {
+                
+                document.getElementById("loading").style.display = "none";
+                ShowSendingProgress();
+                var url = "https://odeme.ayenelektrik.com/";
+                openInAppBrowser(url);   
+            }
+            
+        }
+        
+        function retryConnection(){
+            ShowSendingProgress();
+            document.getElementById("noconn").style.display = "none";
+            document.getElementById("loading").style.display = "block";
+            document.getElementById("close").style.display = "block";
+            document.getElementById("signIn").style.display = "block";
+            setTimeout(function(){
+                checkConnection();
+                StopProgress();
+            }, 500);    
+        }
+        
+        function openInAppBrowser(url){
+          
+            var iab = window.open(url, "_blank", "location=no,toolbar=no,hidden=yes");
+            //var iab = window.location.href= url;
+            
+            iab.addEventListener('loadstop', function(){
+                StopProgress();
+                iab.show();
+            });
+            
+            iab.addEventListener('loadstart', function(obj){
+                if(navigator.network.connection.type == Connection.NONE){
+                    navigator.notification.alert("Internet bağlantınız yok.Lütfen bağlantınızı kontrol edip tekrar deneyin", null, "Baglantı Hatası");   
+                }
+            });
+
+            iab.addEventListener('loaderror', function(){
+                document.getElementById("noconn").style.display = "block";
+                document.getElementById("loading").style.display = "none";
+                document.getElementById("close").style.display = "block";
+                document.getElementById("signIn").style.display = "none";
+                StopProgress();
+            });
+         
+        }
+        
+        function signInApp(){ 
+                //ShowSendingProgress();
+                checkConnection();
+                navigator.splashscreen.hide();
+                 
+            }
+        
+        function closeApp(){
+                navigator.app.exitApp();
+            }
+        
+        function ShowSendingProgress() {
+            
+           var modal = jQuery('<div />');
+           modal.addClass("loaderModal");
+           modal.attr("id", "modalSending");
+           jQuery('body').append(modal);
+           var loading = jQuery("#modalSending.loadings");
+           loading.show();
+           var top = '50%';
+           var left = '42%';
+           loading.css({ top: top, left: left, color: '#ffffff' });
+       }
+
+       function StopProgress() {
+           
+           jQuery("div.loaderModal").hide();
+
+           var loading = jQuery(".loadings");
+           loading.hide();
+       }
+        
+    </script>
+    <style>
+        body {text-align: center;font-family: Arial;background-color: #eee;
+        background-image: url("img/splash-background.jpg");background-size: cover;
+        /*background: #2F7191;*/
+        }
+        
+        #noconn {display:none}
+        /*.button {
+            display:inline-block;
+            padding:20px;
+            border:1px solid #777;
+            background-color: #ddd;
+            border-radius: 5px
+        }*/
+        .button {
+        position: absolute;
+        }
+    .startBtn {
+      display:inline-block;
+      padding:15px;
+      color: #FFFFFF;
+      background-color: #569eb4;
+      border: 1px solid #569eb4;
+      border-radius: 5px;
+      box-shadow: 0px 5px 0px #317393;
+      position: relative;
+      top: 0px;
+      transition: all ease 0.3s;
+    }
+    .startBtn:active {
+      box-shadow: 0 3px 0 #317393;
+      top: 3px;
+    }
+        
+    .loaderModal
+    {
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: black;
+        z-index: 100000000;
+        opacity: 0.8;
+        filter: alpha(opacity=80);
+        -moz-opacity: 0.8;
+        min-height: 100%;
+        width: 100%;
+    }
+    .loadings
+    {
+
+        font-size: 12px;
+       /* border: 5px solid #1b7ebd;*/
+        width: 100px;
+        height: 100px;
+        display: none;
+        position: fixed;
+        /*background-color: White;*/
+        z-index: 100000001;
+    }
+    </style>    
+</head>
+<body>
+    <div data-role="page" id="splashScreen" class="banner">
+        <br>
+        <br>
+        <br>
+        <img src="img/ayen-logo.png" style="text-align:center;width:300px;height:200px"/>
+        <h1 style="color:#fff">Ayen Online İşlemler</h1>
+        <p></p>
+        <br>
+        <h3 id="loading" style="display:none;color:#fff">Yükleniyor ...</h3>
+        <div id="noconn">
+            <h3 style="color:#fff">İnternet bağlantınız yok.</h3>
+            <br>
+            <h3><div class="button startBtn" onclick="retryConnection()" style="color:#fff;width:50%">
+                Tekrar dene.
+                </div>
+            </h3>
+        </div>
+        <div id="signIn">
+            <br>
+            <h3>
+                <div class="button startBtn" onclick="signInApp()" style="color:#fff;width:50%">
+                Müşteri Girişi
+                </div>
+            </h3>
+        </div>
+        <div id="close">
+            <br>
+            <h3>
+                <div class="button startBtn" onclick="closeApp()" style="color:#fff;width:50%">
+                Çıkış
+                </div>
+            </h3>
+        </div>
+        <div class="loadings" style="text-align:center;vertical-align: middle;" id="modalSending">
+            <img src="img/loader.png" style="margin-left: -27px;
+    margin-top: -27px;"/>
+        </div>
+    </div>
+     
+</body>
+</html>

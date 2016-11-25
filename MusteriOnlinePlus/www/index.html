@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Login</title>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+
+        <!--<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=no">-->
+<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
+
+        <style>
+                @-ms-viewport { width: 100vw ; min-zoom: 100% ; zoom: 100% ; }          @viewport { width: 100vw ; min-zoom: 100% zoom: 100% ; }
+                @-ms-viewport { user-zoom: fixed ; min-zoom: 100% ; }                   @viewport { user-zoom: fixed ; min-zoom: 100% ; }
+        </style>
+
+        <link rel="stylesheet" href="css/app.css">
+        
+        <!-- Login Page Link And Script-->
+       <link href="assets/css/idangerous.swiper.css" rel="stylesheet" />
+        
+        <link href="assets/css/plyr.css" rel="stylesheet" />
+        <link href="assets/css/swipebox.css" rel="stylesheet" />
+        <link href="assets/css/style.css" rel="stylesheet" />
+        <link href="assets/css/wedding.css" rel="stylesheet" />
+        <link href='http://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css' />
+        <script src="assets/js/jquery-1.10.1.min.js"></script>
+        <link href="assets/css/loading.css" rel="stylesheet" />
+        <script src="assets/js/blockUI.js"></script>
+        <script src="assets/js/jquery.validate.min.js"></script>
+        <script src="js/login.js"></script>
+        
+    </head>
+    <body onload="ControlMusteriLogin();">
+       <div class="swiper-container swiper-parent">
+        <div class="swiper-wrapper">
+            <!--Menu page-->
+            <div class="swiper-slide sliderbg_menu" style="background: url(assets/img/bg_login.jpg) no-repeat center center; background-attachment: fixed; background-size: cover; ">
+                <div class="swiper-container swiper-nested">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="slide-inner">
+                                <div class="logo">
+                                    <a href="#">
+                                        <img src="assets/img/sayax.jpg"
+                                             border="0" style="background-color: #fff; border-radius: 100%; border: 8px solid #ff9c01;padding:13px;" id="keyboardControlImage"/>
+                                        <span style="color:#fff">TECHNIX TECHNOLOGY</span>
+                                    </a>
+                                </div>
+
+                                <div class="pages_container" style="background-color:transparent;border:0px solid #fff;margin-top:5px">
+                                   
+                        <h2 id="Note"></h2>
+        <div class="form">
+            <form class="cmxform" id="CommentForm" novalidate="novalidate">
+                <input type="text" name="ContactName" placeholder="Kullanıcı Adı" id="ContactName" value="" class="form_input radius4 required">
+                <input type="password" placeholder="Şifre" name="ContactPassword" id="ContactPassword" class="form_input radius4 required valid">
+                <input type="submit" name="submit" class="form_submit radius4 green green_borderbottom" id="submit" onclick="LoginUser();return false;" value="Giriş">
+            </form>
+
+                <h2 id="userControl" style="text-align:center;color:#fff;display:none">
+                    Kullanıcı Adı veya Parola Yanlış
+                </h2>
+
+        </div>
+                                    <div class="clearfix"></div>
+                                    
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-scrollbar"></div>
+                </div>
+            </div>
+        </div>
+        <div class="pagination"></div>
+    </div>
+    <script src="assets/js/plyr.js"></script>
+    <script src="assets/js/load.js"></script>
+    <script src="assets/js/jquery.tabify.js"></script>
+    <script src="assets/js/jquery.swipebox.js"></script>
+    <script src="assets/js/idangerous.swiper.scrollbar-2.1.js"></script>
+    <script src="assets/js/idangerous.swiper-2.1.min.js"></script>
+    <script src="assets/js/code.js"></script>
+
+    </body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+    <link rel="apple-touch-startup-image" href="images/apple-touch-startup-image-320x460.png" />
+    <meta name="author" content="SindevoThemes" />
+    <meta name="description" content="A next generation web app theme" />
+    <meta name="keywords" content="mobile web app, mobile template, mobile design, mobile app design, mobile app theme, mobile wordpress theme, my mobile app" />
+    <title>Faturalar</title>
+    <link href="assets/css/idangerous.swiper.css" rel="stylesheet" />
+    <link href="assets/css/plyr.css" rel="stylesheet" />
+    <link href="assets/css/swipebox.css" rel="stylesheet" />
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="assets/css/wedding.css" rel="stylesheet" />
+    <link href='http://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css' />
+    <script src="assets/js/jquery-1.10.1.min.js"></script>
+    <link href="assets/css/loading.css" rel="stylesheet" />
+    <script src="assets/js/blockUI.js"></script>
+    <script src="assets/js/jquery.validate.min.js"></script>
+    
+    <script src="js/invoices.js"></script>
+    
+    <style>
+        .soflow-color {
+          color: #877;
+                background-color: #fafbfc;
+                border-radius: 5px;
+                padding: 5px;
+                margin-bottom: 10px;
+                position:relative;
+                z-index:100000000;
+        }
+    </style>
+</head>
+<body onload="GetInvoices(5,1,0); return false;">
+    <div id="header" style="top:inherit">
+        <div class="gohome radius20">
+            <a href="home.html"><img src="assets/img/icons/home.png" /></a>
+        </div>
+        <div class="gomenu radius20">
+            <a href="contact.html"><img src="assets/img/icons/contact.png" alt="" title="" /></a>
+        </div>
+    </div>
+    <div class="swiper-container swiper-parent">
+        <div class="swiper-wrapper">
+            <!--Page 3 content Faturalar-->
+            <div class="swiper-slide sliderbg">
+                <div class="swiper-container swiper-nested">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="slide-inner">
+                                <div class="pages_container">
+                                    <!--<h2 class="page_title">Blog</h2>-->
+                                    <div class="image_caption red red_borderbottom radius4">Faturalarınız</div>
+                                    <div class="image_caption radius4" style="border-bottom: 1px #ececec solid">
+                                        <!--<select id="topSize" name="topSize" class="soflow-color">
+                                            <option value="5">5</option>
+                                            <option value="10">10</option>
+                                            <option value="100">100</option>
+
+                                        </select>-->
+                                         <label id="topSizeLabel" class="soflow-color" style="display:none">10</label>
+                                        <button id="btnTopGeri" style=" background-color: #fff; border: 0px solid;" type="button">
+                                            <img src="assets/img/btnLeft.png" title="Geri" style="width:35px;vertical-align:middle" />
+                                        </button>
+                                    <!--<select id="topPage" name="topPage" class="soflow-color">
+                                    </select>-->
+                                        <label id="topPageLabel" class="soflow-color">1</label>
+                                        <button id="btnTopIleri" style=" background-color: #fff; border: 0px solid;">
+                                            <img src="assets/img/btnRight.png" title="İleri" style="width:35px;vertical-align:middle" />
+                                        </button>
+                                    </div>
+
+                                    <div id="gridInvoices">
+                                    </div>
+                                   
+                                    <!--}
+                                    }
+                                    else
+                                    {
+                                    <div class="image_caption radius4" style="background-color:#9a9a9a">Gösterilecek sonuç bulunamadı</div>
+                                    }-->
+                                    <div class="scrolltop radius20">
+                                        <a href="#"><img src="assets/img/icons/top.png" alt="Go on top" title="Go on top" /></a>
+                                    </div>
+                                    <div class="image_caption radius4" style="border-top: 1px #ececec solid;margin-top:10px">
+
+                                        <!--<select id="bottomSize" name="bottomSize" class="soflow-color">
+                                            <option value="5">5</option>
+                                            <option value="10">10</option>
+                                            <option value="100">100</option>
+                                        </select>-->
+                                         <label id="bottomSizeLabel" class="soflow-color" style="display:none">10</label>
+
+                                        <button id="btnBottomGeri" style=" background-color: #fff; border: 0px solid;"type="button">
+                                            <img src="assets/img/btnLeft.png" title="Geri" style="width:35px;vertical-align:middle" />
+                                        </button>
+                                        <!--<select id="bottomPage" name="topPage" class="soflow-color">
+                                        </select>-->
+                                        <label id="bottomPageLabel" class="soflow-color">1</label>
+                                        <button id="btnBottomIleri" style=" background-color: #fff; border: 0px solid;" type="button">
+                                            <img src="assets/img/btnRight.png" title="İleri" style="width:35px;vertical-align:middle" />
+                                        </button>
+                                    </div>
+                                </div>
+                                <!--End of page container-->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-scrollbar"></div>
+                </div>
+            </div>
+            <!--End of pages-->
+        </div>
+        <div class="pagination"></div>
+    </div>
+    <script src="assets/js/plyr.js"></script>
+    <script src="assets/js/load.js"></script>
+    <script src="assets/js/jquery.tabify.js"></script>
+    <script src="assets/js/jquery.swipebox.js"></script>
+    <script src="assets/js/idangerous.swiper.scrollbar-2.1.js"></script>
+    <script src="assets/js/idangerous.swiper-2.1.min.js"></script>
+    <script src="assets/js/code.js"></script>
+     <script type="text/javascript">
+            
+        /*$(document).on('change', '#topPage , #bottomPage', function(){
+            
+            var sizeSelect = $("#topSize").find(":selected").val();
+            
+            var selectedPage = $(this).find(":selected").val();            
+            
+            GetInvoices(sizeSelect,selectedPage,1);
+            
+        });
+            
+        $(document).on('change', '#topSize , #bottomSize', function(){
+            
+            var selectedSize = $(this).find(":selected").val();
+            
+            GetInvoices(selectedSize,1,1);
+            
+        });*/
+            
+        $(document).on('click', '#btnTopIleri , #btnBottomIleri', function(){
+            
+            //var selectedSize = $("#topSize").find(":selected").val();
+            
+            //var selectedPage = $("#topPage").find(":selected").val(); 
+            var selectedSize = 10;
+           
+            var selectedPage = $("#topPageLabel").text();
+            
+            var x = parseInt(selectedPage) + parseInt(1);
+            
+            GetInvoices(selectedSize,x,1);
+        });
+            
+       $(document).on('click', '#btnTopGeri , #btnBottomGeri', function(){
+            
+            //var selectedSize = $("#topSize").find(":selected").val();
+            
+            //var selectedPage = $("#topPage").find(":selected").val(); 
+            var selectedSize = 10;
+           
+            var selectedPage = $("#topPageLabel").text();
+           
+            var x = parseInt(selectedPage) - parseInt(1);
+           
+            GetInvoices(selectedSize,x,1);
+        });
+        
+        </script>
+</body>
+</html>

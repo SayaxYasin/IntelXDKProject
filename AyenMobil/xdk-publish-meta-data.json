@@ -1,0 +1,73 @@
+{
+  "categorization": {
+    "type": "APPLICATION",
+    "category": "Business"
+  },
+  "description": {
+    "texts": {
+      "title": "Ayen Elektrik Online İşlemler",
+      "features": [
+        "Android API 14"
+      ],
+      "short-description": "Ayen Elektrik Online İşlemler",
+      "full-description": "Ayen Elektrik Online Fatura Ödeme Sistemi",
+      "keywords": "ayen elektrik,fatura,ödeme sistemi,online fatura ödeme,ayen online",
+      "recent-changes": "",
+      "privacy-policy": "",
+      "eula": ""
+    },
+    "images": {
+      "screenshots": [
+        "package-assets/screenshot-480x800-2.jpg",
+        "package-assets/screenshot-480x800-1.jpg",
+        "package-assets/screenshot-480x800-3.jpg"
+      ],
+      "app-icon-small": "package-assets/icon-114x114.png",
+      "app-icon": "package-assets/Ayen-512x512.png",
+      "small-promo": "",
+      "large-promo": ""
+    },
+    "videos": {
+      "video-url": ""
+    }
+  },
+  "packages": {
+    "apk-file": "../../Yeni klasör/ayenElektrik.apk",
+    "zip-xdk-compliant": false,
+    "zip-file": "",
+    "secondary-apk-file": ""
+  },
+  "support": {
+    "email": "info@technix.com.tr",
+    "website": "http://www.technix.com.tr/"
+  },
+  "testing-instructions": "Talimatlar",
+  "description-tr": {
+    "texts": {
+      "title": "Ayen Elektrik",
+      "features": [
+        "Android API 13"
+      ],
+      "short-description": "Ayen Elektrik Ödeme Sistemi",
+      "full-description": "Ayen Elektrik Fatura Ödeme Sistemi",
+      "keywords": "ayen elektrik,ödeme sistemi,fatura,sayax",
+      "recent-changes": "",
+      "privacy-policy": "",
+      "eula": ""
+    },
+    "images": {
+      "screenshots": [
+        "package-assets/screenshot-480x800-1.jpg",
+        "package-assets/screenshot-480x800-2.jpg",
+        "package-assets/screenshot-480x800-3.jpg"
+      ],
+      "app-icon-small": "package-assets/icon-114x114.png",
+      "app-icon": "package-assets/icon-512x512.png",
+      "small-promo": "",
+      "large-promo": ""
+    },
+    "videos": {
+      "video-url": ""
+    }
+  }
+}
